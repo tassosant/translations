@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form"
 import { loginUser } from "../../api/user.js";
+import { useUser } from "../../context/UserContext.jsx";
 import { storageSave } from "../../utils/storage.js";
-// import useHi
+import { useNavigate } from "react-router-dom"; //instead of useHistory
+import { STORAGE_KEY_USER } from "../../const/storageKeys.js";
 
 
 //we are doing this because every time this component rerenders it will not re-create this object
@@ -12,10 +14,15 @@ const userNameConfig = {
 }
 
 const StartupForm = () =>{
+    
+    //Hooks
     const {register,
             handleSubmit,
             formState: {errors}
     } = useForm();
+
+    const {user,setUser} = useUser()
+    const navigate = useNavigate()
 
     // const onSubmit = (data)=>{
     //     console.log(data);
@@ -27,9 +34,14 @@ const StartupForm = () =>{
     const [apiError, setApiError] = useState(null)    
     
     //Side effects
+    //if the user changes I want this function to run
     useEffect(()=>{
+        if(user!==null){
+            navigate('/profile')
+        }
+        // console.log('User has changed', user)
         //if user exists then redirect to profile
-    },[]) // Empty dependencies means run only once
+    },[user, navigate]) // Empty dependencies means run only once
 
 
 
@@ -50,13 +62,16 @@ const StartupForm = () =>{
 
     //version 2 video 006
     const onSubmit = async ({username})=>{
+        //on submit button, until it finds the user, the page won't let you press the button
+        //because we change state to loading
         setLoading(true)
-        const [error, user]  = await loginUser(username)
+        const [error, userResponse]  = await loginUser(username)
         if(error!==null){
             setApiError(error)
         }
-        if(user!==null){
-            storageSave('translation-user', user)
+        if(userResponse!==null){
+            storageSave(STORAGE_KEY_USER, userResponse)
+            setUser(userResponse)//we write that when changing the user
         }
         setLoading(false)
         // we cannot redirect at this point, because the component hasn't reloaded
