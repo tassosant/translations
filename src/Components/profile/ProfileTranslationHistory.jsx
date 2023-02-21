@@ -1,6 +1,7 @@
 import ProfileTranslationHistoryItem from "./ProfileTranslationHistoryItem"
 
 const ProfileTranslationHistory = ({translations})=>{
+    //needs modifying to display the last 10 translations
     const translationList = translations.map(translation=><ProfileTranslationHistoryItem key = {translation} item={translation}/>)
     return(
         <section>
