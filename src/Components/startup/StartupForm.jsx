@@ -91,7 +91,7 @@ const StartupForm = () =>{
             return <span>Username is required</span>
         }
         if(errors.username.type==='minLength'){
-            return <span>Username is too shot (min {userNameConfig.minLength})</span>
+            return <span>Username is too short (min {userNameConfig.minLength})</span>
         }
     })()
 

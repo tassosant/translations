@@ -1,14 +1,29 @@
+import { useEffect } from "react"
 import ProfileActions from "../Components/profile/ProfileActions"
 import ProfileHeader from "../Components/profile/ProfileHeader"
 import ProfileTranslationHistory from "../Components/profile/ProfileTranslationHistory"
+import { findUserById } from "../api/user"
 
 import { useUser } from "../context/UserContext"
 import withAuth from "../hoc/withAuth"
+import { storageSave } from "../utils/storage"
+import { STORAGE_KEY_USER } from "../const/storageKeys"
 
 
 const Profile = ()=>{
-    const {user} = useUser()
+    const {user, setUser} = useUser()
     
+    useEffect(()=>{
+        const findUser = async ()=>{
+            const [error,latestUser] = await findUserById(user.id)
+            if(error===null){
+                storageSave(STORAGE_KEY_USER, latestUser)
+                setUser(latestUser)
+            }
+        }
+        findUser()
+    },[setUser, user.id])
+
     return(
         <>
         <h1>Profile</h1>
