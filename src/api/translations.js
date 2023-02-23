@@ -11,6 +11,10 @@ export const translationSentenceAdd = async (user,translation_sentence)=>{
             headers: createHeaders(),
             body: JSON.stringify({
                 //username: user.username,
+                //this translations:[...user.translations, translation_sentence] means that we create an array of translations.
+                //To be more specific we pull the user.translations values with ...user.translations and push in the new array the new translation sentence
+                //after that we save it to user by using setUser function in the page we called this translationSentenceAdd function
+                //
                 translations:[...user.translations, translation_sentence]
                 // translations.push(translation_sentence)
             })
@@ -26,13 +30,13 @@ export const translationSentenceAdd = async (user,translation_sentence)=>{
     }
 }
 
-export const translationClearHistory = async (userId)=>{
+export const translationClearHistory = async (user)=>{
     try{
-        const response = await fetch(`${apiUrl}/${userId}`,{
+        const response = await fetch(`${apiUrl}/${user.id}`,{
             method: 'PATCH',
             headers: createHeaders(),
             body: JSON.stringify({
-                translations:[]
+                translations:[...filterArray(user.translations, 10)]
             })
         })
         if(!response.ok){
@@ -43,4 +47,18 @@ export const translationClearHistory = async (userId)=>{
     }catch(error){
         return [error.message, null]
     }
+}
+
+//this is a function to delete the 10 most recent objects
+function filterArray(sourceArray=[], numberOfItems){
+    if(numberOfItems>=sourceArray.length){
+        return [];
+    }
+    let outputArray=[]
+    outputArray = [...sourceArray.filter((sentence, index,sourceArray)=>{
+        if(index < sourceArray.length - numberOfItems)
+            return sourceArray[index];
+    })]
+    // console.log("outputArray:",outputArray);
+    return outputArray;
 }

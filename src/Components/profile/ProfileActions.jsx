@@ -22,7 +22,9 @@ const ProfileActions = ()=>{
         if(!window.confirm('Are you sure?')){
             return
         }
-        const [clearError, clearResult] = await translationClearHistory(user.id)
+        const [clearError, updatedUser] = await translationClearHistory(user)
+        storageSave(STORAGE_KEY_USER, updatedUser)
+        setUser(updatedUser)
     }
     return(
         <ul>
