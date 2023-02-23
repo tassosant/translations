@@ -18,10 +18,29 @@ nav{
     justify-content: center;
 }
 
+#nav-translation-button{    
+    border-radius: 20px;
+    background-color: #ecd25e;
+    padding-left: 30%;
+    padding-right: 30%;    
+}
+
+#user-text{
+    border: solid lightcoral;
+    border-radius: 20px;
+    background-color: lightcoral;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
 .navbar-loggedin-username{
     display:flex;
     justify-content: right;
     padding-right: 20px;
+    border: solid pink;
+    position: relative;    
+    
 }
 
 /*Startup page & form */
@@ -46,9 +65,49 @@ nav{
     display: flex;
     justify-content: center;    
 }
+/*Profile page */
+.profile-header{
+    display: flex;
+    justify-content: center;  
+}
 
-/*End Startup page & form */
+#logout-button{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-right: 160px;
+    margin-top: 30px;    
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 3px;
+    background-color: red;
+    border-color: red;
+    border-radius: 20px;  
+}
 
+
+#translation-list{
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border: 1px solid #c2c2c2;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+li{
+    border: solid 0.5px lightgray;
+    border-radius: 5px;
+    background-color: #fffff4;
+    margin-right: 25px;
+    margin-bottom:10px;
+}
+
+
+
+
+/*Translation page */
 .translation-form{
     display: flex;
     flex-direction: column;

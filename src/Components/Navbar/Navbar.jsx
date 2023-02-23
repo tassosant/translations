@@ -18,21 +18,19 @@ const Navbar = () =>{
             <div className="navbar-loggedin">
 
                 
-                <div className="navbar-loggedin-item">
-                
-                    <NavLink to="/translations">Translations</NavLink>
-                
+                <div className="navbar-loggedin-item">                
+                    <NavLink to="/translations" id="nav-translation-button">Translations</NavLink>                
                 </div>
                 <div className="navbar-loggedin-item">
                 
-                    <NavLink to="/profile">Profile</NavLink>
+                    {/*<NavLink to="/profile" class="nav-buttons">Profile</NavLink>*/}
                 
                 </div>
                 
             
                 <div className="navbar-loggedin-username">
                                         
-                      <label>Welcome,  <u>{user.username}</u></label>                
+                      <NavLink to="/profile" id="user-text">Welcome,  <u>{user.username}</u></NavLink>                
                     
                 </div>
             </div>

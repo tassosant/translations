@@ -24,7 +24,7 @@ const ProfileTranslationHistory = ({translations})=>{
         <div className="translation-history-item">
         <section>
             <h4>Your translation history</h4>
-            <ul>
+            <ul id="translation-list">
                 {translationList}
             </ul>
         </section>

@@ -31,13 +31,13 @@ const ProfileActions = ()=>{
         setUser(updatedUser)
     }
     return(
-        <div className="profile item actions">
+        <div className="profile-item-actions">
         <div className="actions-items">
             {/*<div className="actions-item"><Link to='/translations'>Translations</Link></div>*/}
             {/* the button should clear the translations from the API */}
             {/* the list from translation, exists in the component translation history, needs modifying to display the last ten translations*/}
-            <div className="actions-item"><button onClick={handleClearHistoryClick}>Clear history</button></div>
-            <div className="actions-item"><button onClick={handleLogoutClick}>Logout</button></div>
+            <div className="clear-button"><button onClick={handleClearHistoryClick}>Clear history</button></div>
+            <button onClick={handleLogoutClick} id="logout-button">Logout</button>
         </div>
         </div>
     )

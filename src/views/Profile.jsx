@@ -26,7 +26,7 @@ const Profile = ()=>{
 
     return(
         <div className="profile">
-            <h1>Profile</h1>
+            <h1 className="profile-header">Profile</h1>
         {/* username(the left one) is a prop for the component ProfileHeader , if we go to the code of this component we will notice that this prop is used by this component*/}
             <ProfileHeader username={user.username}/>
             <ProfileActions />
