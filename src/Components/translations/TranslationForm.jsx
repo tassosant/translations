@@ -59,11 +59,13 @@ const TranslationForm = () =>{
         <div className="translation-form box">
             <div className="translation-form box input-sentence">
                 <form onSubmit={handleSubmit(handleSentence)}>
-                    <fieldset>
-                        <label htmlFor="translation-sentence">Translations sentence</label>
-                        <input type="text" {...register('translation_sentence')}/>
+                    <fieldset>                                        
+                                                
+                        <textarea id="translate-box" placeholder="Input sentence for translation here"{...register('translation_sentence')}/>
                     </fieldset>
-                    <button type='submit'>Translate</button>
+                    <div id="button-area">
+                        <button type='submit' id="translate-button">Translate</button>
+                    </div>
                 </form>
             </div>
             <div className="translation-form box translation-images">
