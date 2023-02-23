@@ -16,6 +16,8 @@ const TranslationForm = () =>{
     const {user, setUser} = useUser()
     //Validates that is not symbols or numbers or not null, display proper message
     const validateTranslationSentence = (translation_sentence)=>{
+        //regex, if at least one letter exists in sentence, return true
+        //else return false
         return true
     }
 
@@ -33,7 +35,7 @@ const TranslationForm = () =>{
     //         // } 
             
     //     }
-        
+        //async the function in order to handle the fetched data
         const handleSentence = async ({translation_sentence}) =>{
             if(validateTranslationSentence(translation_sentence)){
                 setTranslationSetence(translation_sentence)

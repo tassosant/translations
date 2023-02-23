@@ -1,4 +1,4 @@
-
+//captures the img by letter
 export const IndividualSignImageItem = ({imageItem})=>{
     //imageSrcFolder = "../../Images/Individual_signs";
     //imageItem='a.png';

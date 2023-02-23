@@ -11,8 +11,11 @@ const ProfileActions = ()=>{
     const handleLogoutClick = ()=>{
         if(window.confirm('Are you sure?')){
             //send an event to the parent (which currently is the profileView)
+            //delete from storage
             storageDelete(STORAGE_KEY_USER)
+            //save the null user to STORAGE_KEY_USER
             storageSave(STORAGE_KEY_USER,null)
+            //update user state to null
             setUser(null)
         }
     }
@@ -22,6 +25,7 @@ const ProfileActions = ()=>{
         if(!window.confirm('Are you sure?')){
             return
         }
+        //we delete only the last 10 items in translations array
         const [clearError, updatedUser] = await translationClearHistory(user)
         storageSave(STORAGE_KEY_USER, updatedUser)
         setUser(updatedUser)

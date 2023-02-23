@@ -7,7 +7,7 @@ const Startup = ()=>{
                 <h1>Register or login</h1>
             </div>
         {/* success={onSuccess} */}
-        <StartupForm />
+            <StartupForm />
         </div>
     )
 }

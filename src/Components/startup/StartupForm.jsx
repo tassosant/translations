@@ -105,7 +105,7 @@ const StartupForm = () =>{
                     {/* <fieldset> */}
                     <div className="startup-form item">
                     <label htmlFor="username">Username: </label>
-                    {/* the spread operator is used to pass the properties of validationrules object as separate props to the input field so the 'required' and 'maxLength' attributes will be applied to the input field. */}
+                    {/* the spread operator is used to pass the properties of validation rules object as separate props to the input field so the 'required' and 'maxLength' attributes will be applied to the input field. */}
                     </div>
                     {/* <input type="text" {...register("firstName", { required: true, maxLength: 20 })} /> */}
                     <div className="startup-form item">    
