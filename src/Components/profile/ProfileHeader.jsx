@@ -1,8 +1,8 @@
 const ProfileHeader = ({username})=>{
     return(
-        <header>
+        <div className="profile item header title">
             <h4>Hello, welcome back {username}</h4>
-        </header>
+        </div>
     )
 }
 

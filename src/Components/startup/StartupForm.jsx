@@ -96,28 +96,36 @@ const StartupForm = () =>{
     })()
 
     return(
-        <div>
+        <div className="startup box">
             <h2>What is your name?</h2>
             {/* handlesubmit captures all the values from the form and pass them in parenthesis */}
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <fieldset>
+            <div className="startup-form">
 
-                <label htmlFor="username">Username: </label>
-                {/* the spread operator is used to pass the properties of validationrules object as separate props to the input field so the 'required' and 'maxLength' attributes will be applied to the input field. */}
-                {/* <input type="text" {...register("firstName", { required: true, maxLength: 20 })} /> */}
-                <input type="text" 
-                        placeholder="Type your username"
-                {...register("username", userNameConfig)}/>
-                {/* {(errors.username && errors.username.type==='required') && <span>Username is required</span>}
-                {(errors.username && errors.username.type==='minLength') && <span>Username is too shot (min {userNameConfig.minLength})</span>} */}
-                {errorMessage}
-                </fieldset>
-                {/* In other cases we had to use preventDefault to stop redirecting us to another page, 
-                but the handleSubmit function prevents the page from reloading and collects all the data from the inpus of the form*/}
-                <button type="submit" disabled={loading}>Continue</button>
-                {loading && <p>Logging in...</p>}
-                {apiError && <p>{apiError}</p>}
-            </form>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    {/* <fieldset> */}
+                    <div className="startup-form item">
+                    <label htmlFor="username">Username: </label>
+                    {/* the spread operator is used to pass the properties of validationrules object as separate props to the input field so the 'required' and 'maxLength' attributes will be applied to the input field. */}
+                    </div>
+                    {/* <input type="text" {...register("firstName", { required: true, maxLength: 20 })} /> */}
+                    <div className="startup-form item">    
+                        <input type="text" 
+                                placeholder="Type your username"
+                                {...register("username", userNameConfig)}/>
+                    </div>
+                    {/* {(errors.username && errors.username.type==='required') && <span>Username is required</span>}
+                    {(errors.username && errors.username.type==='minLength') && <span>Username is too shot (min {userNameConfig.minLength})</span>} */}
+                    {errorMessage}
+                    {/* </fieldset> */}
+                    {/* In other cases we had to use preventDefault to stop redirecting us to another page, 
+                    but the handleSubmit function prevents the page from reloading and collects all the data from the inpus of the form*/}
+                    <div className="startup-form item">    
+                        <button type="submit" disabled={loading}>Continue</button>
+                        {loading && <p>Logging in...</p>}
+                        {apiError && <p>{apiError}</p>}
+                    </div>
+                </form>
+            </div>
         </div>
     )
 }

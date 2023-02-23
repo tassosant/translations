@@ -11,14 +11,31 @@ const Navbar = () =>{
             </ul>
             {/* we want to display the below ul only when we are logged in */}
             {   user!==null &&
-                <ul>
+            // 
+            <>
+            <div className="navbar navbar-loggedin items">
+
+                
+                    <div className="navbar navbar-loggedin item">
+                    <li>
+                        <NavLink to="/translations">Translations</NavLink>
+                    </li>
+                    </div>
+                    <div className="navbar navbar-loggedin item">
+                    <li>
+                        <NavLink to="/profile">Profile</NavLink>
+                    </li>
+                    </div>
+                
+            </div>
+            <div className="navbar navbar-loggedin items item username">
                 <li>
-                    <NavLink to="/translations">Translations</NavLink>
+                    
+                    {user.username}
+                    
                 </li>
-                <li>
-                    <NavLink to="/profile">Profile</NavLink>
-                </li>
-            </ul>
+            </div>
+            </>
             }
         </nav>
     )

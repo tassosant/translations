@@ -54,20 +54,22 @@ const TranslationForm = () =>{
     }
 
     return(
-        <>
-        <form onSubmit={handleSubmit(handleSentence)}>
-            <fieldset>
-                <label htmlFor="translation-sentence">Translations sentence</label>
-                <input type="text" {...register('translation_sentence')}/>
-            </fieldset>
-            <button type='submit'>Translate</button>
-        </form>
-        <div id="translation-images-box">
-            <ul>
-            {displaySignatureItems && <IndividualSignImages sentence={translation_sentence}></IndividualSignImages>}
-            </ul>
+        <div className="translation-form box">
+            <div className="translation-form box input-sentence">
+                <form onSubmit={handleSubmit(handleSentence)}>
+                    <fieldset>
+                        <label htmlFor="translation-sentence">Translations sentence</label>
+                        <input type="text" {...register('translation_sentence')}/>
+                    </fieldset>
+                    <button type='submit'>Translate</button>
+                </form>
+            </div>
+            <div className="translation-form box translation-images">
+                <div className="translation-images list">
+                    {displaySignatureItems && <IndividualSignImages sentence={translation_sentence}></IndividualSignImages>}
+                </div>
+            </div>
         </div>
-        </>
     )
 }
 

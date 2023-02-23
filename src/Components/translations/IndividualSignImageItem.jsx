@@ -5,12 +5,12 @@ export const IndividualSignImageItem = ({imageItem})=>{
     let imageSrc = '/Images/Individual_signs/';
     
     return(
-        <>
-        <li>
+        <div className="individual-signs-item">
+        
             {/* <img src={require(imageSrc.concat(imageItem))} alt="somePNG"/> */}
             <img src={`${imageSrc}${imageItem}`}  alt="IndividualSignItem"/>
-        </li>
-        </>
+        
+        </div>
     )
    
 }
