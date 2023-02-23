@@ -22,7 +22,8 @@ nav{
     border-radius: 20px;
     background-color: #ecd25e;
     padding-left: 30%;
-    padding-right: 30%;    
+    padding-right: 30%;  
+    display: flex;  
 }
 
 #user-text{
@@ -32,6 +33,7 @@ nav{
     padding-left: 10px;
     padding-right: 10px;
     text-decoration: none;
+    display: flex;
 }
 
 .navbar-loggedin-username{
@@ -100,8 +102,24 @@ li{
     border: solid 0.5px lightgray;
     border-radius: 5px;
     background-color: #fffff4;
-    margin-right: 25px;
-    margin-bottom:10px;
+    margin-right: 35px;
+    margin-bottom:10px;    
+}
+
+#history-header{
+    margin-left: 40px;
+    display: inline-block;
+}
+
+#clear-button{
+    position: absolute;
+    top: 240px;
+    left: 240px;
+    border: solid lightcoral;
+    border-radius: 20px;
+    background-color: lightcoral;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 

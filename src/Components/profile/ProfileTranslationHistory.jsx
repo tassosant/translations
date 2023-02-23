@@ -23,7 +23,7 @@ const ProfileTranslationHistory = ({translations})=>{
     return(
         <div className="translation-history-item">
         <section>
-            <h4>Your translation history</h4>
+            <h4 id="history-header">Your translation history</h4>
             <ul id="translation-list">
                 {translationList}
             </ul>
