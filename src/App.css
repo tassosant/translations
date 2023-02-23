@@ -4,12 +4,58 @@
 nav{
     border-style: dotted;
 }
+/*Navbar*/
+
+.navbar-loggedin {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);    
+    border: solid blue
+}
+
+.navbar-loggedin-item{
+    display: flex;
+    border: solid lightblue;
+    justify-content: center;
+}
+
+.navbar-loggedin-username{
+    display:flex;
+    justify-content: right;
+    padding-right: 20px;
+}
+
+/*Startup page & form */
+.startup-form{
+    border: solid 1px;
+}
+
+.startup-title{
+    display: flex;
+    justify-content: center;
+}
+
+.startup-form-item{
+    border: 0.05em solid red;
+    width: 100%;    
+    display: flex;
+    justify-content: center;
+}
+
+.inform-item{
+    width: 30%;
+    display: flex;
+    justify-content: center;    
+}
+
+/*End Startup page & form */
 
 .translation-form{
     display: flex;
     flex-direction: column;
     gap:30px 30px;
 }
+
+
 
 .translation-images{
     /* border-style: solid; */
