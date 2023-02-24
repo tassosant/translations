@@ -37,7 +37,7 @@ const ProfileActions = ()=>{
             {/*<div className="actions-item"><Link to='/translations'>Translations</Link></div>*/}
             {/* the button should clear the translations from the API */}
             {/* the list from translation, exists in the component translation history, needs modifying to display the last ten translations*/}
-            <button onClick={handleClearHistoryClick} id="clear-button">Clear history</button>
+            <button onClick={handleClearHistoryClick} id="clear-button" className="clickable btn-hover">Clear history</button>
             
         </div>
         </div>

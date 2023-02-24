@@ -96,35 +96,41 @@ const StartupForm = () =>{
     })()
 
     return(
-        <div className="startup-box">
-            <h2 className="startup-title">What is your name?</h2>
-            {/* handlesubmit captures all the values from the form and pass them in parenthesis */}
-            <div className="startup-form">
+        <div className="grid">
+            <div></div>
+            
+            <div className="startup-box">
+                <h2 className="startup-title">What is your name?</h2>
+                {/* handlesubmit captures all the values from the form and pass them in parenthesis */}
+                <div className="startup-form">
 
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    {/* <fieldset> */}                    
-                    {/* <input type="text" {...register("firstName", { required: true, maxLength: 20 })} /> */}
-                    <div className="startup-form-item">    
-                        <input type="text" 
-                                class="inform-item" 
-                                placeholder="Type your username"
-                                {...register("username", userNameConfig)}/>
-                    </div>
-                    {/* {(errors.username && errors.username.type==='required') && <span>Username is required</span>}
-                    {(errors.username && errors.username.type==='minLength') && <span>Username is too shot (min {userNameConfig.minLength})</span>} */}
-                    <div className="startup-form-item"> {errorMessage} </div>
-                    {/* </fieldset> */}
-                    {/* In other cases we had to use preventDefault to stop redirecting us to another page, 
-                    but the handleSubmit function prevents the page from reloading and collects all the data from the inpus of the form*/}
-                    <div className="startup-form-item">    
-                        <button type="submit" disabled={loading} class="inform-item">Continue</button><br></br>
-                    </div>
-                    <div className="startup-form-item">    
-                        {loading && <p>Logging in...</p>}
-                        {apiError && <p>{apiError}</p>}
-                    </div>
-                </form>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        {/* <fieldset> */}                    
+                        {/* <input type="text" {...register("firstName", { required: true, maxLength: 20 })} /> */}
+                        <div className="startup-form-item">    
+                            <input type="text" 
+                                    className="inform-item" 
+                                    placeholder="Type your username"
+                                    id="username-input"
+                                    {...register("username", userNameConfig)}/>
+                        </div>
+                        {/* {(errors.username && errors.username.type==='required') && <span>Username is required</span>}
+                        {(errors.username && errors.username.type==='minLength') && <span>Username is too shot (min {userNameConfig.minLength})</span>} */}
+                        <div className="startup-form-item"> {errorMessage} </div>
+                        {/* </fieldset> */}
+                        {/* In other cases we had to use preventDefault to stop redirecting us to another page, 
+                        but the handleSubmit function prevents the page from reloading and collects all the data from the inpus of the form*/}
+                        <div className="startup-form-item">    
+                            <button type="submit" disabled={loading} id="login-button" className="inform-item clickable">Continue</button><br></br>
+                        </div>
+                        <div className="startup-form-item">    
+                            {loading && <p>Logging in...</p>}
+                            {apiError && <p>{apiError}</p>}
+                        </div>
+                    </form>
+                </div>
             </div>
+            <div></div>
         </div>
     )
 }

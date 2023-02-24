@@ -1,26 +1,54 @@
 .main-body{
-    border-style:solid;
+       
+    background-size: 100%;
+    height: 100%;
+    
 }
+
+html,body {
+    margin:0;
+    width:100%;
+    height:100%;    
+    background-image: url(../public/Images/backround.jpg);
+    background-size: cover;
+    
+}
+
+
 nav{
-    border-style: dotted;
+    border-style: none;
+    background: #e9ce7e;
+    padding-bottom: 4px;
 }
+
+.clickable:hover{
+    cursor: pointer;
+    filter: brightness(80%);
+    box-shadow: 0 3px #999;
+}
+
+.clickable:active {
+    filter: brightness(80%);
+    box-shadow: 0 1px #666;
+    transform: translateY(1px);
+  }
+
 /*Navbar*/
 
 .navbar-loggedin {
     display: grid;
     grid-template-columns: repeat(3, 1fr);    
-    border: solid blue
+    
 }
 
 .navbar-loggedin-item{
-    display: flex;
-    border: solid lightblue;
+    display: flex;    
     justify-content: center;
 }
 
 #nav-translation-button{    
     border-radius: 20px;
-    background-color: #ecd25e;
+    background-color: #5da271;
     padding-left: 30%;
     padding-right: 30%;  
     display: flex;  
@@ -32,14 +60,13 @@ nav{
     padding-left: 10px;
     padding-top: 4px;
     padding-bottom: 3px;
-    background-color: red;
-    border-color: red;
+    background-color: #ff0000d3;
+    border-color: #ff0000d3;
     border-radius: 20px;  
 }
 
 
-#user-text{
-    border: solid lightcoral;
+#user-text{    
     border-radius: 20px;
     background-color: lightcoral;
     padding-left: 10px;
@@ -51,15 +78,41 @@ nav{
 .navbar-loggedin-username{
     display:flex;
     justify-content: right;
-    padding-right: 20px;
-    border: solid pink;
+    padding-right: 20px;    
     position: relative;    
     
 }
 
+
+
+
+
 /*Startup page & form */
-.startup-form{
-    border: solid 1px;
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.startup-box{
+    border-style: solid;
+    border-width: thin;
+    background-color: hsl(46, 100%, 93%);
+    border-radius: 10px;
+    -webkit-box-shadow: -3px 5px 4px -3px rgba(0,0,0,0.36); 
+    box-shadow: -3px 5px 4px -3px rgba(0,0,0,0.36);
+    padding: 10px;
+}
+
+#username-input{
+    border-radius: 20px;
+}
+
+#login-button{
+    border-color: hwb(216 7% 0%);
+    background-color: hwb(216 7% 0%);
+    border-radius: 20px;
 }
 
 .startup-title{
@@ -67,15 +120,14 @@ nav{
     justify-content: center;
 }
 
-.startup-form-item{
-    border: 0.05em solid red;
+.startup-form-item{    
     width: 100%;    
     display: flex;
     justify-content: center;
 }
 
-.inform-item{
-    width: 30%;
+.inform-item{  
+    width: 100%;  
     display: flex;
     justify-content: center;    
 }
@@ -86,14 +138,15 @@ nav{
 }
 
 
-
 #translation-list{
     display: table;
     table-layout: fixed;
     width: 100%;
-    border: 1px solid #c2c2c2;
+    /* border: 1px solid #c2c2c2; */
     box-sizing: border-box;
     list-style-type: none;
+    /* -webkit-box-shadow: -3px 5px 4px -3px rgba(0,0,0,0.36); 
+    box-shadow: -3px 5px 4px -3px rgba(0,0,0,0.36); */
 }
 
 li{
@@ -102,6 +155,8 @@ li{
     background-color: #fffff4;
     margin-right: 35px;
     margin-bottom:10px;    
+    -webkit-box-shadow: -3px 5px 4px -3px rgba(0,0,0,0.36); 
+    box-shadow: -3px 5px 4px -3px rgba(0,0,0,0.36);
 }
 
 #history-header{
@@ -111,7 +166,7 @@ li{
 
 #clear-button{
     position: absolute;
-    top: 240px;
+    top: 200px;
     left: 240px;
     border: solid lightcoral;
     border-radius: 20px;
@@ -123,11 +178,16 @@ li{
 
 
 
+
 /*Translation page */
+fieldset{
+    margin-right: 15px ;
+    border-style: none;
+}
 
 #translate-box{
     display: flex;
-    width: 98%;
+    width: 100%;    
     height: 130px;
     min-height: 130px;
     max-height: 250px;
@@ -158,7 +218,6 @@ li{
 }
 
 
-
 .translation-form{
     display: flex;
     flex-direction: column;
@@ -166,12 +225,21 @@ li{
 }
 
 
+#translation-list{
+    border: none;
+}
 
-.translation-images{
+.translation-container{
     /* border-style: solid; */
     height: auto;
     border-style: solid;
-
+    border-width: thin;
+    background-color: white;    
+    margin-left: 15px ;
+    margin-right: 20px ;
+    border-radius: 7px;
+    -webkit-box-shadow: -3px 5px 4px -3px rgba(0,0,0,0.36); 
+    box-shadow: -3px 5px 4px -3px rgba(0,0,0,0.36);
 }
 
 .translation-images.list{
@@ -200,3 +268,5 @@ li{
     align-items: center;
     justify-items: center;
 }
+
+

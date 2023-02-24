@@ -19,7 +19,8 @@ const ProfileTranslationHistory = ({translations})=>{
     //needs modifying to display the last 10 translations(done)
     //displays the last 10 translations
     const translationHistory = returnLastItems(translations, 10)
-    const translationList = translationHistory.map(translation=><ProfileTranslationHistoryItem key = {translation} item={translation}/>)
+    // const translationList = translationHistory.map(translation=><ProfileTranslationHistoryItem key = {translation} item={translation}/>)
+    const translationList = translationHistory.map((translation,index)=><ProfileTranslationHistoryItem key = {translation.concat(index)} item={translation}/>)
     return(
         <div className="translation-history-item">
         <section>
