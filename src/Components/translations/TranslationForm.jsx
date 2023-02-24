@@ -18,7 +18,12 @@ const TranslationForm = () =>{
     const validateTranslationSentence = (translation_sentence)=>{
         //regex, if at least one letter exists in sentence, return true
         //else return false
-        return true
+        let pattern = new RegExp('[a-zA-Z]','g');
+        let result = pattern.exec(translation_sentence);
+        if(result===null)
+            return false
+        if(result.length>=1)
+            return true
     }
 
     // const onSubmit = ({translation_sentence}) =>{
