@@ -26,7 +26,7 @@ Working with REACT was a fresh experience for both of us so it was a good challe
         7. When to use useEffect  
         8. Better understanding of the MVC architecture 
 - **Bill Tsolis**:   
-    In this particular assigment Tasos ended up handling a lot of the actual React compoments. Despite that I do feel like I have a better picture of why such architectures are desired, their benefits and I generally learned enough that I feel comfortable with the idea of builing a REACT based web app on my own. CSS was once again the bane of my existence, not through difficutly of usage but I figured out I really do not enjoy working on in. 
+    In this particular assigment Tasos ended up handling a lot of the actual React compoments. Despite that I do feel like I have a better picture of why such architectures are desired, their benefits and I generally learned enough that I feel comfortable with the idea of builing a REACT based web app on my own. CSS was once again the bane of my existence, not through difficutly of usage but I figured out I really do not enjoy working on it. 
     
 
 ## How to Run
