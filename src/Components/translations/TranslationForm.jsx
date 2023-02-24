@@ -69,11 +69,11 @@ const TranslationForm = () =>{
                         <textarea id="translate-box" placeholder="Input sentence for translation here"{...register('translation_sentence')}/>
                     </fieldset>
                     <div id="button-area">
-                        <button type='submit' id="translate-button">Translate</button>
+                        <button type='submit' id="translate-button" className="clickable">Translate</button>
                     </div>
                 </form>
             </div>
-            <div className="translation-form box translation-images">
+            <div className="translation-form box translation-images translation-container">
                 <div className="translation-images list">
                     {displaySignatureItems && <IndividualSignImages sentence={translation_sentence}></IndividualSignImages>}
                 </div>

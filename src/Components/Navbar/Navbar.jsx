@@ -26,7 +26,7 @@ const Navbar = () =>{
             {/*<ul>
                 <li>Translation emojis</li>
             </ul>*/}
-            <br></br>
+            
             {/* we want to display the below ul only when we are logged in */}
             {   user!==null &&
             // 
@@ -36,7 +36,7 @@ const Navbar = () =>{
 
                 
                 <div className="navbar-loggedin-item">                
-                    <NavLink to="/translations" id="nav-translation-button">Translations</NavLink>                
+                    <NavLink to="/translations" id="nav-translation-button" className="clickable">Translations</NavLink>                
                 </div>
                 <div className="navbar-loggedin-item">
                 
@@ -47,8 +47,8 @@ const Navbar = () =>{
             
                 <div className="navbar-loggedin-username">
 
-                    <button onClick={handleLogoutClick} id="logout-button">Logout</button>                                        
-                    <NavLink to="/profile" id="user-text">Welcome,  <u>{user.username}</u></NavLink>                
+                    <button onClick={handleLogoutClick} id="logout-button" className="clickable">Logout</button>                                        
+                    <NavLink to="/profile" id="user-text" className="clickable">Welcome,  <u>{user.username}</u></NavLink>                
                     
                 </div>
             </div>
