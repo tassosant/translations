@@ -5,28 +5,31 @@ const apiUrl = process.env.REACT_APP_API_URL
 // display 10 last translations(so the 10 last elements of translations array)
 export const translationSentenceAdd = async (user,translation_sentence)=>{
     
-    try{
-        const response =  await fetch(`${apiUrl}/${user.id}`,{
-            method:'PATCH',
-            headers: createHeaders(),
-            body: JSON.stringify({
-                //username: user.username,
-                //this translations:[...user.translations, translation_sentence] means that we create an array of translations.
-                //To be more specific we pull the user.translations values with ...user.translations and push in the new array the new translation sentence
-                //after that we save it to user by using setUser function in the page we called this translationSentenceAdd function
-                //
-                translations:[...user.translations, translation_sentence]
-                // translations.push(translation_sentence)
+    if (translation_sentence != "" && translation_sentence != null)
+    {
+        try{
+            const response =  await fetch(`${apiUrl}/${user.id}`,{
+                method:'PATCH',
+                headers: createHeaders(),
+                body: JSON.stringify({
+                    //username: user.username,
+                    //this translations:[...user.translations, translation_sentence] means that we create an array of translations.
+                    //To be more specific we pull the user.translations values with ...user.translations and push in the new array the new translation sentence
+                    //after that we save it to user by using setUser function in the page we called this translationSentenceAdd function
+                    //
+                    translations:[...user.translations, translation_sentence]
+                    // translations.push(translation_sentence)
+                })
             })
-        })
-        if(!response.ok){
-            throw new Error('Could not update the translations')
+            if(!response.ok){
+                throw new Error('Could not update the translations')
+            }
+            const result = await response.json()
+            return [null, result]
         }
-        const result = await response.json()
-        return [null, result]
-    }
-    catch(error){
-        return [error.message, null]
+        catch(error){
+            return [error.message, null]
+        }
     }
 }
 

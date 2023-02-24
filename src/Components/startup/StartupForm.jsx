@@ -88,39 +88,38 @@ const StartupForm = () =>{
             return null
         }
         if(errors.username.type==='required'){
-            return <span>Username is required</span>
+            return <span className="inform-item">Username is required</span>
         }
         if(errors.username.type==='minLength'){
-            return <span>Username is too short (min {userNameConfig.minLength})</span>
+            return <span className="inform-item">Username is too short (min {userNameConfig.minLength})</span>
         }
     })()
 
     return(
-        <div className="startup box">
-            <h2>What is your name?</h2>
+        <div className="startup-box">
+            <h2 className="startup-title">What is your name?</h2>
             {/* handlesubmit captures all the values from the form and pass them in parenthesis */}
             <div className="startup-form">
 
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    {/* <fieldset> */}
-                    <div className="startup-form item">
-                    <label htmlFor="username">Username: </label>
-                    {/* the spread operator is used to pass the properties of validation rules object as separate props to the input field so the 'required' and 'maxLength' attributes will be applied to the input field. */}
-                    </div>
+                    {/* <fieldset> */}                    
                     {/* <input type="text" {...register("firstName", { required: true, maxLength: 20 })} /> */}
-                    <div className="startup-form item">    
+                    <div className="startup-form-item">    
                         <input type="text" 
+                                class="inform-item" 
                                 placeholder="Type your username"
                                 {...register("username", userNameConfig)}/>
                     </div>
                     {/* {(errors.username && errors.username.type==='required') && <span>Username is required</span>}
                     {(errors.username && errors.username.type==='minLength') && <span>Username is too shot (min {userNameConfig.minLength})</span>} */}
-                    {errorMessage}
+                    <div className="startup-form-item"> {errorMessage} </div>
                     {/* </fieldset> */}
                     {/* In other cases we had to use preventDefault to stop redirecting us to another page, 
                     but the handleSubmit function prevents the page from reloading and collects all the data from the inpus of the form*/}
-                    <div className="startup-form item">    
-                        <button type="submit" disabled={loading}>Continue</button>
+                    <div className="startup-form-item">    
+                        <button type="submit" disabled={loading} class="inform-item">Continue</button><br></br>
+                    </div>
+                    <div className="startup-form-item">    
                         {loading && <p>Logging in...</p>}
                         {apiError && <p>{apiError}</p>}
                     </div>

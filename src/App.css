@@ -4,12 +4,168 @@
 nav{
     border-style: dotted;
 }
+/*Navbar*/
+
+.navbar-loggedin {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);    
+    border: solid blue
+}
+
+.navbar-loggedin-item{
+    display: flex;
+    border: solid lightblue;
+    justify-content: center;
+}
+
+#nav-translation-button{    
+    border-radius: 20px;
+    background-color: #ecd25e;
+    padding-left: 30%;
+    padding-right: 30%;  
+    display: flex;  
+}
+
+#logout-button{     
+    margin-right: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 3px;
+    background-color: red;
+    border-color: red;
+    border-radius: 20px;  
+}
+
+
+#user-text{
+    border: solid lightcoral;
+    border-radius: 20px;
+    background-color: lightcoral;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    display: flex;
+}
+
+.navbar-loggedin-username{
+    display:flex;
+    justify-content: right;
+    padding-right: 20px;
+    border: solid pink;
+    position: relative;    
+    
+}
+
+/*Startup page & form */
+.startup-form{
+    border: solid 1px;
+}
+
+.startup-title{
+    display: flex;
+    justify-content: center;
+}
+
+.startup-form-item{
+    border: 0.05em solid red;
+    width: 100%;    
+    display: flex;
+    justify-content: center;
+}
+
+.inform-item{
+    width: 30%;
+    display: flex;
+    justify-content: center;    
+}
+/*Profile page */
+.profile-header{
+    display: flex;
+    justify-content: center;  
+}
+
+
+
+#translation-list{
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border: 1px solid #c2c2c2;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+li{
+    border: solid 0.5px lightgray;
+    border-radius: 5px;
+    background-color: #fffff4;
+    margin-right: 35px;
+    margin-bottom:10px;    
+}
+
+#history-header{
+    margin-left: 40px;
+    display: inline-block;
+}
+
+#clear-button{
+    position: absolute;
+    top: 240px;
+    left: 240px;
+    border: solid lightcoral;
+    border-radius: 20px;
+    background-color: lightcoral;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+
+/*Translation page */
+
+#translate-box{
+    display: flex;
+    width: 98%;
+    height: 130px;
+    min-height: 130px;
+    max-height: 250px;
+    resize: vertical;
+    border-radius: 5px;
+
+}
+
+#button-area{
+    display: flex;
+    justify-content: center;
+}
+
+#translate-button{
+    display: flex;    
+    border: solid mediumslateblue;
+    border-radius: 20px;
+    background-color: mediumslateblue;    
+    width: 100%;
+    margin-left: 35px;
+    margin-right: 35px;
+    justify-content: center;
+}
+
+.translation-header{
+    display: flex;
+    justify-content: center;
+}
+
+
 
 .translation-form{
     display: flex;
     flex-direction: column;
     gap:30px 30px;
 }
+
+
 
 .translation-images{
     /* border-style: solid; */

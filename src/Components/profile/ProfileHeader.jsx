@@ -1,6 +1,6 @@
 const ProfileHeader = ({username})=>{
     return(
-        <div className="profile item header title">
+        <div className="profile-header">
             <h4>Hello, welcome back {username}</h4>
         </div>
     )

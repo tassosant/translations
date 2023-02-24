@@ -21,10 +21,10 @@ const ProfileTranslationHistory = ({translations})=>{
     const translationHistory = returnLastItems(translations, 10)
     const translationList = translationHistory.map(translation=><ProfileTranslationHistoryItem key = {translation} item={translation}/>)
     return(
-        <div className="profile item translation-history">
+        <div className="translation-history-item">
         <section>
-            <h4>Your translation history</h4>
-            <ul>
+            <h4 id="history-header">Your translation history</h4>
+            <ul id="translation-list">
                 {translationList}
             </ul>
         </section>
