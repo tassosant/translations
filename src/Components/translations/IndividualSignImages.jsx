@@ -9,7 +9,8 @@ export const IndividualSignImages = ({sentence})=>{
         //we have to put keys so in re-rendering the previous components will be destroyed
         let keyValue = 0;
         //we increment the key value with a prefixed letter to avoi same keys. 
-        const wordList = sentence.split(/\W|_/g).map(word=>{return handleWord(word,keyValue++)})
+        // const wordList = sentence.split(/\W|_/g).map(word=>{return handleWord(word,keyValue++)})
+        const wordList = sentence.split(/[^a-zA-Z]/g).map(word=>{return handleWord(word,keyValue++)})
         console.log(wordList)
         return wordList;
     }
