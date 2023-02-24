@@ -15,7 +15,7 @@ export const IndividualSignImages = ({sentence})=>{
     }
     
     const handleWord = (word, keyValue)=>{
-        return word.split("").map((letter)=>{return <IndividualSignImageItem key={letter.concat(keyValue++)} imageItem={`${letter}.png`}/>})
+        return word.split("").map((letter)=>{return <IndividualSignImageItem key={letter.concat(keyValue++)} imageItem={`${letter.toLowerCase()}.png`}/>})
     }
     
     return(

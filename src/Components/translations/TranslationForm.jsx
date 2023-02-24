@@ -42,7 +42,7 @@ const TranslationForm = () =>{
     //     }
         //async the function in order to handle the fetched data
         const handleSentence = async ({translation_sentence}) =>{
-            if(validateTranslationSentence(translation_sentence)){
+            if(validateTranslationSentence(translation_sentence)){                
                 setTranslationSetence(translation_sentence)
                 setDisplaySignatureItems(true)
             }else{
