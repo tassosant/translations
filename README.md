@@ -38,9 +38,10 @@ Working with REACT was a fresh experience for both of us so it was a good challe
 #### Instructions
 
 - Begin with downloading/cloning the repo. 
-- Navigate to the root folder of the repo and use `npm start` on your terminal of choice. The app will open in your browser. 
+- Navigate to the root folder of the repo and reate a `.env` file pointing to your own version of the REST API used for the assignment.
+- Use `npm start` on your terminal of choice(while still in root fodler). The app will open in your browser. 
 
-If you get any errors or a message that port 3000 refused connection or wasnt found try running `npx kill-port 3000` and `npm install` in the root folder of the app before running `npm start` again. 
+If you get any errors relating to `react-scripts` or a message that port 3000 refused connection or wasnt found try running `npx kill-port 3000` and `npm install` in the root folder of the app before running `npm start` again. 
 
 
 ## Contributors
